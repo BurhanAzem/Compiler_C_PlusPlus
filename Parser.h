@@ -17,10 +17,10 @@ public:
 	AST* ParseProgram(AST*);
 	AST* ParseDecl_list(AST*);
 	AST* ParseDecl(AST*);
-	AST* Parse(AST*);
-	AST* Parse(AST*);
-	AST* Parse(AST*);
-	AST* Parse(AST*);
+	AST* ParseExp(AST*);
+	AST* ParseType(AST*);
+	AST* ParseFormal_list(AST*);
+	AST* ParseBlock(AST*);
 	AST* Parse(AST*);
 	AST* Parse(AST*);
 	AST* Parse(AST*);

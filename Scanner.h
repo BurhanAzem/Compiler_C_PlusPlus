@@ -41,7 +41,7 @@ struct	TOKEN
 
 class SCANNER {
 private:
-	FileDescriptor* Fd;
+	
 	// define your functions ..
 	//I would define the following functions..
 	void skip_comments();
@@ -52,6 +52,7 @@ private:
 	TOKEN* get_int(const char* word); // gets integers and floats
 
 public:
+	FileDescriptor* Fd;
 	SCANNER();
 	SCANNER(FileDescriptor* fd); //{ Fd = fd; /* write other code if needed*/ };
 	TOKEN* Scan(FileDescriptor* fd);

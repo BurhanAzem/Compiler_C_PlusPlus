@@ -52,12 +52,18 @@ Parser::Parser()
 --------------------------------------------------------
 
 < block> → begin <var _decl_list> <stmt _list> end
- <var _decl_list> → <var _decl> ';' < var _decl_list>
+
+--------------------------------------------------------
+
+ <var_decl_list> → <var _decl> ';' < var _decl_list>
 		| λ
 
 --------------------------------------------------------
 
 <var _decl> → var id ':' <type>
+
+--------------------------------------------------------
+
 <stmt_list> → <stmt> ';' <stmt_list>
 		| λ
 
@@ -102,6 +108,13 @@ Parser::Parser()
 < unary _op> → - | not
 
 --------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+/*
+* 
+<program> → <decl_list>
 
 */
 Parser::ParseProgram()
@@ -109,25 +122,114 @@ Parser::ParseProgram()
 	return ParseDecl_list();
 }
 
+
+/*
+
+<decl_list> → <decl> ;' <decl_list>  
+			  | λ
+
+*/
+
 Parser::ParseDecl_list()
 {
 	ParseDecl();
+	TOKEN* next_token = this->scanner.Scan();
+	if (next_token->type != lx_semicolon)
+	{
+		this->scanner.Fd->reportError("Invalid grammer");
+	}
+	ParseDecl_list();
 }
 
 
 /*
 < decl> → var id ':' <type>
-		| constant id ' =' < expr>
+		| constant id ' =' <expr>
 		| function id <formal_list> ':' <type> <block>
 		| procedure id <formal_list> <block>
 
 */
 Parser::ParseDecl()
 {
-	TOKEN* token = this->scanner.Scan();
-	if (token->type == kw_var)
+	TOKEN* next_token;
+	next_token = this->scanner.Scan();
+	if (next_token->type == kw_var)
 	{
-		TOKEN* token = this->scanner.Scan();
-		this->symbol_Tables
+		next_token = this->scanner.Scan();
+		//this->symbol_Tables
+		if (next_token->type != lx_identifier)
+		{
+			this->scanner.Fd->reportError("Invalid grammer");
+		}
+		next_token = this->scanner.Scan();
+		if (next_token->type != lx_colon)
+		{
+			this->scanner.Fd->reportError("Invalid grammer");
+		}
+		ParseType();
 	}
+	else if (next_token->type == kw_constant)
+	{
+		next_token = this->scanner.Scan();
+		//this->symbol_Tables
+		if (next_token->type != lx_identifier)
+		{
+			this->scanner.Fd->reportError("Invalid grammer");
+		}
+		next_token = this->scanner.Scan();
+		if (next_token->type != lx_eq)
+		{
+			this->scanner.Fd->reportError("Invalid grammer");
+		}
+		ParseExp();
+	}
+	else if (next_token->type == kw_function)
+	{
+		next_token = this->scanner.Scan();
+		//this->symbol_Tables
+		if (next_token->type != lx_identifier)
+		{
+			this->scanner.Fd->reportError("Invalid grammer");
+		}
+		ParseFormal_list();
+		next_token = this->scanner.Scan();
+		if (next_token->type != lx_colon)
+		{
+			this->scanner.Fd->reportError("Invalid grammer");
+		}
+		ParseType();
+		ParseBlock();
+	}
+	else if (next_token->type == kw_procedure)
+	{
+		next_token = this->scanner.Scan();
+		//this->symbol_Tables
+		if (next_token->type != lx_identifier)
+		{
+			this->scanner.Fd->reportError("Invalid grammer");
+		}
+		ParseFormal_list();
+		ParseBlock();
+	}
+}
+
+
+
+
+
+
+Parser::ParseExp()
+{
+
+}
+
+Parser::ParseFormal_list()
+{
+
+}
+
+
+Parser::ParseBlock()
+{
+
 }
