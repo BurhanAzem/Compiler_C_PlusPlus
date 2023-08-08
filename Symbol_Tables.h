@@ -6,7 +6,6 @@
 
 class Symbol_Tables{
 	STable* head;
-	STable* sTable;
 
 	Symbol_Tables();
 	void enter_scope(); /*Inform the symbol table that the parser is entering a new scope */

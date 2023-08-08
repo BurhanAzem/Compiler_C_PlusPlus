@@ -18,7 +18,7 @@ private:
     int number_probes; // Number of probes into table 
     int number_hits; // Number of probes that immediately found entry 
     int max_search_dist; // Maximum entries searched 
-    STable* next; // To be used to create a stack of symbol table 
+     // To be used to create a stack of symbol table 
     // add your defined functions, e.g hash .
     // Externally-visible functions
 public:

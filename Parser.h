@@ -15,8 +15,8 @@ public:
 	SCANNER scanner;
 	Symbol_Tables* symbol_Tables;
 	AST* ParseProgram(AST*);
-	AST* Parse(AST*);
-	AST* Parse(AST*);
+	AST* ParseDecl_list(AST*);
+	AST* ParseDecl(AST*);
 	AST* Parse(AST*);
 	AST* Parse(AST*);
 	AST* Parse(AST*);

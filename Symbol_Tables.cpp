@@ -15,5 +15,5 @@
 	}
 	void Symbol_Tables::exit_scope()
 	{
-		this->head = this->sTable->next;
+		this->head = this->head->next;
 	}

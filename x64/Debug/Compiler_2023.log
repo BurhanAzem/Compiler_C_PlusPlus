@@ -1,0 +1,152 @@
+﻿  Ast.cpp
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(9,10): fatal  error C1083: Cannot open include file: 'compiler.h': No such file or directory
+  Compiler_2023.cpp
+  FileDescriptor.cpp
+  Parser.cpp
+C:\Desktop\BM_Code\Compiler_2023\STable.h(31,13): error C2086: 'STable *STable::next': redefinition
+C:\Desktop\BM_Code\Compiler_2023\FileDescriptor.cpp(7,22): error C2011: 'FileDescriptor': 'class' type redefinition
+C:\Desktop\BM_Code\Compiler_2023\FileDescriptor.cpp(7,7): message : see declaration of 'FileDescriptor'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(14,5): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(14,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(14,11): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(15,10): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(15,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(15,16): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(22,10): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(22,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(22,16): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(88,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(88,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(88,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(93,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(93,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(93,12): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(97,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(97,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(97,18): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(98,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(98,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(98,15): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(99,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(99,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(99,15): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(103,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(103,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(103,18): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(104,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(104,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(104,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,20): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(110,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(110,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(110,20): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(111,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(111,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(111,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(133,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(133,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(133,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(157,80): warning C4138: '*/' found outside of comment
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(157,80): error C2059: syntax error: '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(158,18): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(162,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(162,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(162,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(163,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(163,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(163,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(169,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(169,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(169,12): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(19,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(20,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(21,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(22,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(23,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(25,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(26,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(27,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(28,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(29,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(30,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(31,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(32,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(33,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(34,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(35,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(36,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(37,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(38,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(39,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(40,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(41,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(42,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(43,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(44,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(45,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(46,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(47,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(48,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(49,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(50,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(51,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(52,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(53,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(3,9): error C2600: 'Parser::Parser': cannot define a compiler-generated special member function (must be declared in the class first)
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(68,1): error C2761: 'AST *Parser::ParseProgram(AST *)': redeclaration of member is not allowed
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(71,1): fatal  error C1004: unexpected end-of-file found
+  Scanner.cpp
+  STable.cpp
+C:\Desktop\BM_Code\Compiler_2023\stentry.h(42,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Desktop\BM_Code\Compiler_2023\STable.h(31,13): error C2086: 'STable *STable::next': redefinition
+  STEntry.cpp
+C:\Desktop\BM_Code\Compiler_2023\STEntry.cpp(41,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  STList.cpp
+C:\Desktop\BM_Code\Compiler_2023\stentry.h(42,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Symbol_Tables.cpp
+C:\Desktop\BM_Code\Compiler_2023\STable.h(31,13): error C2086: 'STable *STable::next': redefinition
+C:\Desktop\BM_Code\Compiler_2023\Symbol_Tables.cpp(13,9): error C2248: 'STable::next': cannot access private member declared in class 'STable'
+C:\Desktop\BM_Code\Compiler_2023\STable.h(21,13): message : see declaration of 'STable::next'
+C:\Desktop\BM_Code\Compiler_2023\STable.h(11,7): message : see declaration of 'STable'
+C:\Desktop\BM_Code\Compiler_2023\Symbol_Tables.cpp(18,28): error C2248: 'STable::next': cannot access private member declared in class 'STable'
+C:\Desktop\BM_Code\Compiler_2023\STable.h(21,13): message : see declaration of 'STable::next'
+C:\Desktop\BM_Code\Compiler_2023\STable.h(11,7): message : see declaration of 'STable'
+  Generating Code...
