@@ -2,9 +2,29 @@
 
 Parser::Parser()
 {
-
+	STable* global_stable = new STable();
+	this->symbol_Tables->head = global_stable;
 }
 
+
+STE_TYPE getSteType(LEXEME_TYPE type)
+{
+	switch (type)
+	{
+	case lx_integer:
+		return STE_INT;
+	case lx_string:
+		return STE_STRING;
+	case lx_float:
+		return STE_FLOAT;
+	case lex_double:
+		return STE_DOUBLE;
+	case lex_char:
+		return STE_CHAR;
+	default :
+		return STE_NONE; //0
+	}
+}
 /*
 
 
@@ -117,9 +137,9 @@ Parser::Parser()
 <program> → <decl_list>
 
 */
-Parser::ParseProgram()
+Parser::ParseProgram(AST* tree)
 {
-	return ParseDecl_list();
+	return ParseDecl_list(tree);
 }
 
 
@@ -130,15 +150,15 @@ Parser::ParseProgram()
 
 */
 
-Parser::ParseDecl_list()
+Parser::ParseDecl_list(AST* tree)
 {
-	ParseDecl();
+	AST* tree = ParseDecl(AST * tree);
 	TOKEN* next_token = this->scanner.Scan();
 	if (next_token->type != lx_semicolon)
 	{
 		this->scanner.Fd->reportError("Invalid grammer");
 	}
-	ParseDecl_list();
+	return ParseDecl_list(AST * tree);
 }
 
 
@@ -149,14 +169,15 @@ Parser::ParseDecl_list()
 		| procedure id <formal_list> <block>
 
 */
-Parser::ParseDecl()
+AST* Parser::ParseDecl(AST* tree)
 {
 	TOKEN* next_token;
 	next_token = this->scanner.Scan();
 	if (next_token->type == kw_var)
 	{
 		next_token = this->scanner.Scan();
-		//this->symbol_Tables
+		char* name = next_token->str_ptr;
+
 		if (next_token->type != lx_identifier)
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
@@ -166,7 +187,11 @@ Parser::ParseDecl()
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
-		ParseType();
+		LEXEME_TYPE type = next_token->type;
+		STE_TYPE ste_type = getSteType(type);
+		STEntry* sTEntry = new STEntry(name, ste_type);
+		this->symbol_Tables->head->PutSymbol(name, ste_type);
+		return tree.make_ast_node(sTEntry, tree);
 	}
 	else if (next_token->type == kw_constant)
 	{
@@ -181,7 +206,7 @@ Parser::ParseDecl()
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
-		ParseExp();
+		AST* tree = ParseExp(AST * tree);
 	}
 	else if (next_token->type == kw_function)
 	{
@@ -191,14 +216,14 @@ Parser::ParseDecl()
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
-		ParseFormal_list();
+		ParseFormal_list(AST * tree);
 		next_token = this->scanner.Scan();
 		if (next_token->type != lx_colon)
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
-		ParseType();
-		ParseBlock();
+		ParseType(AST * tree);
+		ParseBlock(AST * tree);
 	}
 	else if (next_token->type == kw_procedure)
 	{
@@ -208,9 +233,10 @@ Parser::ParseDecl()
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
-		ParseFormal_list();
-		ParseBlock();
+		AST* tree = ParseFormal_list(AST * tree);
+		AST* tree = ParseBlock(AST * tree);
 	}
+	return tree;
 }
 
 
@@ -218,18 +244,18 @@ Parser::ParseDecl()
 
 
 
-Parser::ParseExp()
+AST* Parser::ParseExp(AST* tree)
 {
 
 }
 
-Parser::ParseFormal_list()
+AST* Parser::ParseFormal_list(AST* tree)
 {
 
 }
 
 
-Parser::ParseBlock()
+AST* Parser::ParseBlock(AST* tree)
 {
 
 }

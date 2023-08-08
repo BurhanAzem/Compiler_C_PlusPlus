@@ -5,6 +5,7 @@
 #include "STable.h"
 
 class Symbol_Tables{
+public:
 	STable* head;
 
 	Symbol_Tables();
