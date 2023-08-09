@@ -17,6 +17,8 @@ typedef enum
     STE_FLOAT,
     STE_DOUBLE,
     STE_CHAR,
+    STE_BOOLEAN,
+    STE_CONST
 }STE_TYPE;
 
 static const char* STE_TYPE_STR[TYPE_SIZE] = { "None","int","char*","float","double","char" };// It is not a good idea to put this here
@@ -26,6 +28,9 @@ class STEntry
 public:
 
     char Name[64];
+    int int_value;
+    bool boolean_value;
+    char* str_value;
     STE_TYPE Type;  //it is an int
     STEntry* Next;
     int SearchedTimes;

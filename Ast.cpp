@@ -6,10 +6,6 @@ arguments are the fields of that type of node, in order. */
 
 #include <stdio.h>
 #include <varargs.h>
-#include "compiler.h"
-#include "types.h"
-#include "fd.h"
-#include "symbol.h"
 #include "Ast.h"
 /* Internal routines: */
 static void nl_indent(FILE*, int);
@@ -17,182 +13,186 @@ static void p_a_n(FILE*, AST*, int);
 static void print_ast_list(FILE*, ast_list*, char*, int);
 static void print_ste_list(FILE*, ste_list*, char*, char*, int);
 
+
+
+void fatal_error(const char* message) {
+	printf("Fatal Error: %s\n", message);
+	exit(1);
+}
 ///////////////////////////////////////////////////////////////////////
 // page 2
-AST* make_ast_node(AST_type type, ...);
+AST* make_ast_node(AST_type type, ...)
 {
-	AST* n = (AST*)mal1oc(sizeof(AST)); // change to new
+	AST* n = (AST*)malloc(sizeof(AST)); // change to new
 	va_list ap;
 	AST_type type;
 
-	if (n == NUlL) fatal_error("malloc failed in make_ast_node\n");
+	if (n == NULL) fatal_error("malloc failed in make_ast_node\n");
 
 	va_start(ap);
 	type = va_arg(ap, AST_type);
 	n->type = type;
 	switch (type) {
-	case ast_var_decl:
-		n->f.a_var_decl.name = va_arg(ap, symbol_table_entry*);
-		n->f.a_var_decl.type = va_arg(ap, j_type);
-		break;
+		case ast_var_decl:
+			n->f.a_var_decl.name = va_arg(ap, symbol_table_entry*);
+			break;
 
-	case ast_const_decl:
-		n->f.a_const_decl.name = va_arg(ap, symbol_table_entry*);
-		n->f.a_const_decl.value = va_arg(ap, int);
-		break;
+		case ast_const_decl:
+			n->f.a_const_decl.name = va_arg(ap, symbol_table_entry*);
+			n->f.a_const_decl.value = va_arg(ap, int);
+			break;
 
-	case ast_routine_decl:
-		n->f.a_routine_decl.name = va_arg(ap, symbol_table_entry*);
-		n->f.a_routine_decl.formals = va arg(ap, ste_list*);
-		n->f.a_routine_decl.result_type = va arg(ap, J_type);
-		n->f.a_routine_decl.body = va_arg(ap, AST*);
-		break;
+		case ast_routine_decl:
+			n->f.a_routine_decl.name = va_arg(ap, symbol_table_entry*);
+			n->f.a_routine_decl.formals = va_arg(ap, ste_list*);
+			n->f.a_routine_decl.result_type = va_arg(ap, AST_type);
+			n->f.a_routine_decl.body = va_arg(ap, AST*);
+			break;
 
-	case ast_assign:
-		n->f.a_assign.lhs = va_arg(ap, symbol_table_entry*);
-		n->f.a_assign.rhs = va_arg(ap, AST*);
-		break;
+		case ast_assign:
+			n->f.a_assign.lhs = va_arg(ap, symbol_table_entry*);
+			n->f.a_assign.rhs = va_arg(ap, AST*);
+			break;
 
-	case ast_if:
-		n->f.a_if.predicate = va_arg(ap, AST*);
-		n->f.a_if.conseq = va_arg(ap, AST*);
-		n->f.a_if.altern = va_arg(ap, AST*);
-		break;
+		case ast_if:
+			n->f.a_if.predicate = va_arg(ap, AST*);
+			n->f.a_if.conseq = va_arg(ap, AST*);
+			n->f.a_if.altern = va_arg(ap, AST*);
+			break;
 
-	case ast_while:
-		n->f.a_while.predicate = va_arg(ap, AST*);
-		n->f.a_while.body = va_arg(ap, AST*);
-		break;
+		case ast_while:
+			n->f.a_while.predicate = va_arg(ap, AST*);
+			n->f.a_while.body = va_arg(ap, AST*);
+			break;
 
-	case ast_for:
-		n->f.a_for.var = va_arg(ap, symbol_table_entry*);
-		n->f.a_for.lower_bound = va_arg(ap, AST*);
-		n->f.a_for.upper_bound = va_arg(ap, AST*);
-		n->f.a_for.body = va_arg(ap, AST*);
-		break;
+		case ast_for:
+			n->f.a_for.var = va_arg(ap, symbol_table_entry*);
+			n->f.a_for.lower_bound = va_arg(ap, AST*);
+			n->f.a_for.upper_bound = va_arg(ap, AST*);
+			n->f.a_for.body = va_arg(ap, AST*);
+			break;
 
-	case ast_read: //page 3
-		n->f.a_read.var = va_arg(ap, symbol_table_entry*);
-		break;
+		case ast_read: //page 3
+			n->f.a_read.var = va_arg(ap, symbol_table_entry*);
+			break;
 
-	case ast_write:
-		n->f.a_write.var = va_arg(ap, symbol_table_entry*);
-		break;
+		case ast_write:
+			n->f.a_write.var = va_arg(ap, symbol_table_entry*);
+			break;
 
-	case ast_call:
-		n->f.a call.callee = va_arg(ap, symbol table entry*);
-		n->f.a = call.arg_list = va_arg(ap, ast_list*);
-		break;
+		case ast_call:
+			n->f.a_call.callee = va_arg(ap, symbol_table_entry*);
+			n->f.a_call.arg_list = va_arg(ap, ast_list*);
+			break;
 
-	case ast_block:
-		n->f.a block.vars = va_arg(ap, ste list*);
-		n->f.a = block.stmts = va_arg(ap, ast_list*);
-		break;
+		case ast_block:
+			n->f.a_block.vars = va_arg(ap, ste_list*);
+			n->f.a_block.stmts = va_arg(ap, ast_list*);
+			break;
 
-	case ast_return:
-		n->f.a_return.expr = va_arg(ap, AST*);
-		break;
+		case ast_return:
+			n->f.a_return.expr = va_arg(ap, AST*);
+			break;
 
-	case ast_var:
-		n->f.a_var.var = va_arg(ap, symbol_table_entry*);
-		break;
+		case ast_var:
+			n->f.a_var.var = va_arg(ap, symbol_table_entry*);
+			break;
 
-	case ast_integer:
-		n->f.a_integer.value = va_arg(ap, int);
-		break;
+		case ast_integer:
+			n->f.a_integer.value = va_arg(ap, int);
+			break;
 
-	case ast_float:
-		n->f.a_float.value = va_arg(ap, float);
-		break;
-	case ast_string:
-		n->f.a_string.string = va_arg(ap, char*);
-		break;
-	case ast_boolean:
-		n->f.a_boolean.value = va_arg(ap, int);
-		break;
+		case ast_float:
+			n->f.a_float.value = va_arg(ap, float);
+			break;
+		case ast_string:
+			n->f.a_string.string = va_arg(ap, char*);
+			break;
+		case ast_boolean:
+			n->f.a_boolean.value = va_arg(ap, int);
+			break;
+		case ast_times:
+		case ast_divide:
+		case ast_plus:
+		case ast_minus:
+		case ast_eq:
+		case ast_neq:
+		case ast_lt:
+		case ast_le:
+		case ast_gt:
+		case ast_ge:
+		case ast_and:
+		case ast_or:
+		case ast_cand:
+		/*case ast_cor:
+			n->f.a_binary_op.larg = va_arg(ap, AST*);
+			n->f.a_binary_op.rarg = va_arg(ap, AST*);
+			break;*/
 
-	case ast_times:
-	case ast_divide:
-	case ast_plus:
-	case ast_minus:
-	case ast_eq:
-	case ast_neq:
-	case ast_lt:
-	case ast_le:
-	case ast_gt:
-	case ast_ge:
-	case ast_and:
-	case ast_or:
-	case ast_cand:
-	case ast_cor:
-		n->f.a_binary_op.larg = va_arg(ap, AST*);
-		n->f.a_binary_op.rarg = va_arg(ap, AST*);
-		break;
-
-	case ast_not:
-	case ast_uminus:
-		n->f.a_unary_op.arg = va_arg(ap, AST*);
-		break;
-		// new page page 4
-	case ast_itof:
-		n->f.a_itof.arg = va_arg(ap, AST*);
-		break;
-	case ast_eof:
-		break;
-	default:
-		fatal_error("Unknown type of AST node in make_ast_node'n");
-	}
+		//case ast_not:
+		/*case ast_uminus:
+			n->f.a_unary_op.arg = va_arg(ap, AST*);
+			break;*/
+			// new page page 4
+		case ast_itof:
+			n->f.a_itof.arg = va_arg(ap, AST*);
+			break;
+		case ast_eof:
+			break;
+		default:
+			fatal_error("Unknown type of AST node in make_ast_node'n");
+		}
 	return (n);
 }
 //////////////////////////////////////////////////////////////////////
 /* Evaluate a constant expression represented as an AST. Return an
 integer value. Errors are reported as errors in the user's program. */
-int eval_ast_expr(file_descriptor* fd, AST* n)
+int eval_ast_expr(FileDescriptor* fd, AST* n)
 {
 	if (n == NULL)
 		fatal_error("NULL AST in eval_ast_expr'n");
 	switch (n->type)
 	{
 	case ast_var:
-		if (n->f.a var.var->entry_type == ste_const)
-			return (ste_const_value(n->f.a_var.var);
+		if (n->f.a_var.var->Type == STE_INT)
+			return (n->f.a_var.var->int_value);
 		else
-				report_error(fd, "Cannot use variables in constant expressions");
+				fd->reportError("Cannot use variables in constant expressions");
 		return (0);;
 	case ast_integer:
 		return (n->f.a_integer.value);
 	case ast_string:
-		report_error(fd, "Cannot use strings in constant expressions");
+		fd->reportError("Cannot use strings in constant expressions");
 		return (0);;
 	case ast_boolean:
 		return (n->f.a_boolean.value);
 	case ast_times:
 		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
-			* eval_ast_expr(fd, n->f.a_binary _op.rarg));
+			* eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_divide:
 		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
-			/ eval_ast_expr(fd, -n->f.a_binary_op.rarg));
+			/ eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_plus:
 		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
 			+ eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_minus:
-		return (eval_ast_expr(fd, n->f.a_binary _op.larg)
-			- eval_ast_expr(fd, n->f.a_binary _op.rarg));
+		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
+			- eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_eq:
-		return (eval ast expr(fd, n->f.a binary op.larg)
-			== eval_ast_expr(fd, n->f.a_binary _op.rarg));
+		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
+			== eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_neq:
 		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
-			!= eval_ast_expr(fd, n->f.a_binary _op.rarg)); // page 5
-	case ast_It:
+			!= eval_ast_expr(fd, n->f.a_binary_op.rarg)); // page 5
+	case ast_lt:
 		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
 			< eval_ast_expr(fd, n->f.a_binary_op.rarg));
-	case ast_Ie:
+	case ast_le:
 		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
-			<= eval_ast_expr(fd, n->f.a_binary _op.rarg));
+			<= eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_gt:
-		return (eval ast expr(fd, n->f.a binary op.larg)
-			> eval_ast_expr(fd, -n->f.a_binary_op.rarg));
+		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
+			> eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_ge:
 		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
 			>= eval_ast_expr(fd, n->f.a_binary_op.rarg));
@@ -200,20 +200,26 @@ int eval_ast_expr(file_descriptor* fd, AST* n)
 		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
 			& eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_or:
-		return (eval ast expr(fd, n->f.a binary_op.larg)
+		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
 			| eval_ast_expr(fd, n->f.a_binary_op.rarg));
-	case ast_cand:
-		return (eval ast expr(fd, n->f.a binary op.larg)
-			& eval_ast_expr(fd, -n->f.a = binary_op.rarg));
+	/*case ast_cand:
+		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
+			& eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_cor:
 		return (eval_ast_expr(fd, n->f.a_binary_op.larg)
 			| eval_ast_expr(fd, n->f.a_binary_op.rarg));
 	case ast_not:
-		return (~eval_ast_expr(fd, n->f.a_unary _op.arg));
+		if (n->f.a_unary_op.arg->Type == STE_BOOLEAN)
+			return (~ n->f.a_var.var->boolean_value);
+		else
+			fd->reportError("Cannot use variables in constant expressions");
 	case ast_uminus:
-		return (-eval_ast_expr(fd, n->f.a_unary_op.arg));
+		if (n->f.a_unary_op.arg->Type == STE_BOOLEAN)
+			return (-- n->f.a_var.var->int_value);
+		else
+			fd->reportError("Cannot use variables in constant expressions");*/
 	default:
-		fatal error("Unknown AST node in eval ast expr \n");
+		fatal_error("Unknown AST node in eval ast expr \n");
 		return (0);
 	}
 }
@@ -232,22 +238,21 @@ static void p_a_n(FILE* f, AST* n, int d)
 	{
 		// new page 6
 	case ast_var_decl:
-		fprintf(f, "var %s: %s;", ste_name(n->f.a_var_decl.name),
-			type_names[n->f.a_var_decl.type]);
+		fprintf(f, "var %s %s: ;", n->f.a_var_decl.name);
 		nl_indent(f, d);
 		break;
 	case ast_const_decl:
-		fprintf(f, "constant %s = %d;", ste_name(n->f.a_const_decl.name),
+		fprintf(f, "constant %s = %d;", n->f.a_const_decl.name,
 			n->f.a_const_decl.value);
 		nl_indent(f, d);
 		break;
 	case ast_routine_decl:
 	{
 		if (n->f.a_routine_decl.result_type == type_none)
-			fprintf(f, "procedure %s (", ste name(n->f.a_routine_decl.nam));
+			fprintf(f, "procedure %s (", n->f.a_routine_decl.name);
 		else
-			fprintf(f, "function %s (", ste name(n->f.a_routine_decl.name));
-		print_ste_list(f, n->f.a_routine_decl.fomals, "", ", ", -1);
+			fprintf(f, "function %s (", n->f.a_routine_decl.name);
+		print_ste_list(f, n->f.a_routine_decl.formals, "", ", ", -1);
 		if (n->f.a_routine_decl.result_type == type_none) {
 			fprintf(f, ")");
 			nl_indent(f, d + 2);
@@ -259,11 +264,11 @@ static void p_a_n(FILE* f, AST* n, int d)
 		}
 		p_a_n(f, n->f.a_routine_decl.body, d + 2);
 		fprintf(f, ";");
-		nt_indent(f, d);
+		nl_indent(f, d);
 		break;
 	}
 	case ast_assign:
-		fprintf(f, "%s := ", ste_name(n->f.a_assign.lhs));
+		fprintf(f, "%s := ", n->f.a_assign.lhs);
 		p_a_n(f, n->f.a_assign.rhs, d);
 		break;
 	case ast_if:
@@ -276,7 +281,7 @@ static void p_a_n(FILE* f, AST* n, int d)
 			nl_indent(f, d);
 			fprintf(f, "else");
 			nl_indent(f, d + 2);
-			p_a_n(f, n->f.a_if.alten, d + 2);
+			p_a_n(f, n->f.a_if.altern, d + 2);
 		}
 		break;
 	case ast_while:
@@ -286,28 +291,28 @@ static void p_a_n(FILE* f, AST* n, int d)
 		nl_indent(f, d + 2);
 		p_a_n(f, n->f.a_while.body, d + 2);
 		nl_indent(f, d);
-		fprintf(f, "od"); ,// new page
+		fprintf(f, "od"); // new page
 			break;
 	case ast_for:
-		fprintf(f, "for %s = ", ste name(n->f.a_for.var));
-		p_a_n(f, n->f.a_for.lower_ bound, d);
-		fprintff(f, " to ");
-		p_a_n(f, n->f.a_ for.upper_ bound, d);
+		fprintf(f, "for %s = ", n->f.a_for.var);
+		p_a_n(f, n->f.a_for.lower_bound, d);
+		fprintf(f, " to ");
+		p_a_n(f, n->f.a_for.upper_bound, d);
 		fprintf(f, " do");
 		nl_indent(f, d + 2);
 		p_a_n(f, n->f.a_for.body, d + 2);
 		nl_indent(f, d);
 		fprintf(f, "od");
 		break;
-		case ast read :
-			fprintf(f, "read (%s)", ste name(n->f.a read.var));
+		case ast_read :
+			fprintf(f, "read (%s)", n->f.a_read.var);
 			break;
 		case ast_write:
-			fprintf(f, "write (%s)", ste name(n->f.a read.var));
+			fprintf(f, "write (%s)", n->f.a_read.var);
 			break;
 		case ast_call:
-			fprintf(f, "%s (", ste name(n->f.a call.callee));
-			print_ast_list(f, n->f.a_call.arg_list, ", ", -1);
+			fprintf(f, "%s (", n->f.a_call.callee);
+			print_ast_list(f, n->f.a_call.arg_list, ";", -1);
 			fprintf(f, ")");
 			break;
 		case ast_block:
@@ -319,21 +324,21 @@ static void p_a_n(FILE* f, AST* n, int d)
 			fprintf(f, "end");
 			break;
 		case ast_return:
-			fprintf" (f, "return (");
+			fprintf (f, "return ");
 				p_a_n(f, n->f.a_return.expr, d);
 			fprintf(f, ")");
 			break;
 		case ast_var:
-			fprintf(f, "%s", ste name(n->f.a var.var));
+			fprintf(f, "%s", n->f.a_var.var);
 			break;
 		case ast_integer:
-			fprintf(f, "%d", n->f.a integer.value);
+			fprintf(f, "%d", n->f.a_integer.value);
 			break;
 		case ast_float:
-			fprintf(f, "%f', n->f.a float.value);
+			fprintf(f, "%f', n->f.a float.value");
 				break;
 		case ast_string:
-			fprintf(f, '\"%s\"", n->f.a_string.string);
+			fprintf(f, "\"%s\"", n->f.a_string.string);
 				break;
 		case ast_boolean:
 			fprintf(f, n->f.a_boolean.value ? "true" : "false");
@@ -345,51 +350,51 @@ static void p_a_n(FILE* f, AST* n, int d)
 		case ast_eq:
 		case ast_neq:
 		case ast_lt:
-		case ast le :
+		case ast_le :
 		case ast_gt:
 		case ast_ge:
 		case ast_and:
 		case ast_or:
 		case ast_cand:
 		case ast_cor:
-			fprinif(C, "(");
-			p_a_n(f, n->C.a_binary_op.larg, d);
+			fprintf(f, "(");
+			p_a_n(f, n->f.a_binary_op.larg, d);
 			switch (n->type) {
 				case ast_times:
-					fprintf(C, " * ");
+					fprintf(f, " * ");
 					break;
 				case ast_divide:
-					fprintf(C, " / ");
+					fprintf(f, " / ");
 					break;
 				case ast_plus:
-					fprintf(C, " + ");
+					fprintf(f, " + ");
 					break;
 				case ast_minus:
-					fprintf(C, " -");
+					fprintf(f, " -");
 					break;
 				case ast_eq:
-					fprintf(C, " = ");
+					fprintf(f, " = ");
 					break;
 				case ast_neq:
-					fprintf(C, " != ");
+					fprintf(f, " != ");
 					break;
 				case ast_lt:
-					fprintf(C, " < ");
+					fprintf(f, " < ");
 					break;
 				case ast_le:
-					fprinff(C, " <= ");
+					fprintf(f, " <= ");
 					break;
 				case ast_gt:
-					fprinif(C, " > ");
+					fprintf(f, " > ");
 					break;
 				case ast_ge:
-					fprintf(C, " >= ");
+					fprintf(f, " >= ");
 					break;
 				case ast_and:
-					fprintf(C, " and ");
+					fprintf(f, " and ");
 					break;
 				case ast_or:
-					fprinif(C, " or ");
+					fprintf(f, " or ");
 					break; // new page
 				case ast_cand:
 					fprintf(f, " cand ");
@@ -403,7 +408,7 @@ static void p_a_n(FILE* f, AST* n, int d)
 			p_a_n(f, n->f.a_binary_op.rarg, d);
 			fprintf(f, ")");
 			break;
-			case ast_not:
+			/*case ast_not:
 				fprintf(f, "(not ");
 				p_a_n(f, n->f.a_unary_op.arg, d);
 				fprintf(f, ")");
@@ -412,17 +417,17 @@ static void p_a_n(FILE* f, AST* n, int d)
 				fprintf(f, "( -");
 				p_a_n(f, n->f.a_unary_op.arg, d);
 				fprintf(f, ")");
-				break;
+				break;*/
 			case ast_eof:
 				fprintf(f, "EOF");
 				break;
 			default:
-				fatal error("Unknown AST node type\n");
+				fatal_error("Unknown AST node type\n");
 	}
 }
 ///////////////////////////////////////////////////
 /* Print a list of AST nodes. */
-static void print_ast_list(FILE* f, ast_list* L, char* sep, int d)
+static void print_ast_list(FILE* f, ast_list* L,const char* sep, int d)
 {
 	for (; L != NULL; L = L->tail) {
 		p_a_n(f, L->head, d);
@@ -434,24 +439,25 @@ static void print_ast_list(FILE* f, ast_list* L, char* sep, int d)
 }
 ////////////////////////////////////////////////////////////////
 /* Print a list of symbol table entries along with their types. */
-static void
-print ste_list(FILE* f, ste list* L, char* prefix, char* sep, int d)
+static void print_ste_list(FILE* f, ste_list* L, const char* prefix, const char* sep, int d)
 {
-	for (; L != NULL; 1 = l->tail) {
-		fprintf(f, "%s%s : %s", prefix, ste_name(L->head),
-			type_names[ste_var_type(L->head)]);
-		if (L->tail || d >= 0) fprintf(f, sep); // new page 10
-		if (d >= 0) nl_indent(f, d);
-	}
+    for (; L != NULL; L = L->tail) { // Correct the loop condition
+        fprintf(f, "%s%s : %s", prefix, ste_name(L->head),
+            type_names[ste_var_type(L->head)]);
+        if (L->tail != NULL || d >= 0) fprintf(f, sep); // Correct the condition
+        if (d >= 0) nl_indent(f, d);
+    }
 }
+
 ///////////////////////////////////////////////////
-/* Print a newline and indent D space. */
 static void nl_indent(FILE* f, int d)
 {
 	fprintf(f, "\n");
-	while (d -> 0) fprintf(f, " ");
+	while (d > 0) { 
+		fprintf(f, " ");
+		d--;
+	}
 }
-
 
 
 

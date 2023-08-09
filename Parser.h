@@ -14,13 +14,12 @@ private:
 public:
 	SCANNER scanner;
 	Symbol_Tables* symbol_Tables;
-	AST* ParseProgram(AST*);
-	AST* ParseDecl_list(AST*);
-	AST* ParseDecl(AST*);
-	AST* ParseExp(AST*);
-	AST* ParseType(AST*);
-	AST* ParseFormal_list(AST*);
-	AST* ParseBlock(AST*);
+	AST* ParseProgram();
+	AST* ParseDecl_list();
+	AST* ParseDecl();
+	AST* ParseExp();
+	AST* ParseFormal_list();
+	AST* ParseBlock();
 	AST* Parse(AST*);
 	AST* Parse(AST*);
 	AST* Parse(AST*);

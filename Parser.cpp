@@ -21,9 +21,29 @@ STE_TYPE getSteType(LEXEME_TYPE type)
 		return STE_DOUBLE;
 	case lex_char:
 		return STE_CHAR;
+	case lex_boolean:
+		return STE_BOOLEAN;
 	default :
 		return STE_NONE; //0
 	}
+}
+
+
+AST_type getAstType(char* type)
+{
+	if ("int" == type)
+		return ast_integer;
+	if ("char*" == type)
+		return ast_string;
+	if ("float" == type)
+		return ast_float;
+	if ("bouble" == type)
+		return ast_double;
+	if ("char" == type)
+		return ast_char;
+	if ("boolean" == type)
+		return ast_boolean;
+	return ast_none; //0
 }
 /*
 
@@ -137,9 +157,9 @@ STE_TYPE getSteType(LEXEME_TYPE type)
 <program> → <decl_list>
 
 */
-Parser::ParseProgram(AST* tree)
+AST* Parser::ParseProgram()
 {
-	return ParseDecl_list(tree);
+	return ParseDecl_list();
 }
 
 
@@ -150,15 +170,15 @@ Parser::ParseProgram(AST* tree)
 
 */
 
-Parser::ParseDecl_list(AST* tree)
+AST* Parser::ParseDecl_list()
 {
-	AST* tree = ParseDecl(AST * tree);
+	AST* tree = ParseDecl();
 	TOKEN* next_token = this->scanner.Scan();
 	if (next_token->type != lx_semicolon)
 	{
 		this->scanner.Fd->reportError("Invalid grammer");
 	}
-	return ParseDecl_list(AST * tree);
+	return ParseDecl_list();
 }
 
 
@@ -169,8 +189,9 @@ Parser::ParseDecl_list(AST* tree)
 		| procedure id <formal_list> <block>
 
 */
-AST* Parser::ParseDecl(AST* tree)
+AST* Parser::ParseDecl()
 {
+	AST* tree = (AST*)malloc(sizeof(AST));
 	TOKEN* next_token;
 	next_token = this->scanner.Scan();
 	if (next_token->type == kw_var)
@@ -187,16 +208,21 @@ AST* Parser::ParseDecl(AST* tree)
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
+
+		next_token = this->scanner.Scan();
 		LEXEME_TYPE type = next_token->type;
 		STE_TYPE ste_type = getSteType(type);
+
 		STEntry* sTEntry = new STEntry(name, ste_type);
-		this->symbol_Tables->head->PutSymbol(name, ste_type);
-		return tree.make_ast_node(sTEntry, tree);
+
+		this->symbol_Tables->head->PutSymbol(name, ste_type);   // message
+																// Bassam MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMESAG
+		return make_ast_node((AST_type)ast_var_decl, sTEntry);  // Bassam this is call for function use variable argument (search on it) i TRID A LOT TO FIX BUT I CAN'T
 	}
 	else if (next_token->type == kw_constant)
 	{
 		next_token = this->scanner.Scan();
-		//this->symbol_Tables
+		char* name = next_token->str_ptr;
 		if (next_token->type != lx_identifier)
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
@@ -206,35 +232,60 @@ AST* Parser::ParseDecl(AST* tree)
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
-		AST* tree = ParseExp(AST * tree);
+		AST* ExpTree = ParseExp();
+
+		int value = eval_ast_expr(this->scanner.Fd, ExpTree);
+
+
+		STEntry* sTEntry = new STEntry(name, STE_INT);
+
+		this->symbol_Tables->head->PutSymbol(name, STE_INT);
+
+		return make_ast_node((AST_type)ast_const_decl, sTEntry, value);
 	}
 	else if (next_token->type == kw_function)
 	{
 		next_token = this->scanner.Scan();
-		//this->symbol_Tables
+		char* name = next_token->str_ptr;
 		if (next_token->type != lx_identifier)
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
-		ParseFormal_list(AST * tree);
+		AST* formal_listTree = ParseFormal_list();
 		next_token = this->scanner.Scan();
 		if (next_token->type != lx_colon)
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
-		ParseType(AST * tree);
-		ParseBlock(AST * tree);
+
+		next_token = this->scanner.Scan();
+		AST_type ast_type = getAstType(next_token->str_ptr);
+
+		AST* blockTree = ParseBlock();
+
+		STEntry* sTEntry = new STEntry(name, STE_STRING);
+
+		this->symbol_Tables->head->PutSymbol(name, STE_STRING);
+
+		return make_ast_node((AST_type)ast_routine_decl, sTEntry, formal_listTree, ast_type, blockTree);
 	}
 	else if (next_token->type == kw_procedure)
 	{
 		next_token = this->scanner.Scan();
-		//this->symbol_Tables
+		char* name = next_token->str_ptr;
 		if (next_token->type != lx_identifier)
 		{
 			this->scanner.Fd->reportError("Invalid grammer");
 		}
-		AST* tree = ParseFormal_list(AST * tree);
-		AST* tree = ParseBlock(AST * tree);
+		AST* formal_listTree = ParseFormal_list();
+	
+		AST* blockTree = ParseBlock();
+
+		STEntry* sTEntry = new STEntry(name, STE_STRING);
+
+		this->symbol_Tables->head->PutSymbol(name, STE_STRING);
+
+		return make_ast_node((AST_type)ast_routine_decl, sTEntry, formal_listTree, blockTree);
 	}
 	return tree;
 }
@@ -244,18 +295,18 @@ AST* Parser::ParseDecl(AST* tree)
 
 
 
-AST* Parser::ParseExp(AST* tree)
+AST* Parser::ParseExp()
 {
 
 }
 
-AST* Parser::ParseFormal_list(AST* tree)
+AST* Parser::ParseFormal_list()
 {
 
 }
 
 
-AST* Parser::ParseBlock(AST* tree)
+AST* Parser::ParseBlock()
 {
 
 }

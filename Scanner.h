@@ -10,7 +10,7 @@
 typedef enum
 {
 	/* Literals */
-	lx_identifier, lx_integer, lx_string, lx_float, lex_char, lex_double,
+	lx_identifier, lx_integer, lx_string, lx_float, lex_char, lex_double, lex_boolean,
 	/* Keywords */
 	kw_program,
 	kw_var, kw_constant, kw_integer, kw_boolean, kw_string, kw_float,

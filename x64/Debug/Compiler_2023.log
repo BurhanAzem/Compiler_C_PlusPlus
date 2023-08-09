@@ -1,9 +1,211 @@
 ﻿  Ast.cpp
-C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(9,10): fatal  error C1083: Cannot open include file: 'compiler.h': No such file or directory
+C:\Desktop\BM_Code\Compiler_2023\STEntry.h(47,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(14,5): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(14,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(14,11): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(15,10): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(15,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(15,16): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(22,10): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(22,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(22,16): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(69,2): error C2365: 'ast_times': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(45,2): message : see declaration of 'ast_times'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(70,2): error C2365: 'ast_divide': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(46,2): message : see declaration of 'ast_divide'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(71,2): error C2365: 'ast_plus': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(47,2): message : see declaration of 'ast_plus'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(72,2): error C2365: 'ast_minus': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(48,2): message : see declaration of 'ast_minus'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(73,2): error C2365: 'ast_eq': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(49,2): message : see declaration of 'ast_eq'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(74,2): error C2365: 'ast_neq': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(50,2): message : see declaration of 'ast_neq'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(76,2): error C2365: 'ast_lt': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(52,2): message : see declaration of 'ast_lt'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(77,2): error C2365: 'ast_le': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(53,2): message : see declaration of 'ast_le'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(78,2): error C2365: 'ast_gt': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(54,2): message : see declaration of 'ast_gt'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(79,2): error C2365: 'ast_ge': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(55,2): message : see declaration of 'ast_ge'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(80,2): error C2365: 'ast_and': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(56,2): message : see declaration of 'ast_and'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(81,2): error C2365: 'ast_or': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(57,2): message : see declaration of 'ast_or'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(82,2): error C2365: 'ast_cand': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(58,2): message : see declaration of 'ast_cand'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(83,2): error C2365: 'ast_cor': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(59,2): message : see declaration of 'ast_cor'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(84,2): error C2365: 'ast_not': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(60,2): message : see declaration of 'ast_not'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(85,2): error C2365: 'ast_uminus': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(61,2): message : see declaration of 'ast_uminus'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(86,2): error C2365: 'ast_uplus': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(62,2): message : see declaration of 'ast_uplus'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(114,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(114,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(114,12): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(118,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(118,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(118,18): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(119,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(119,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(119,15): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(120,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(120,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(120,15): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(124,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(124,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(124,18): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(125,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(125,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(125,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(130,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(130,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(130,20): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(131,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(131,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(131,20): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(132,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(132,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(132,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(154,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(154,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(154,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(183,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(183,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(183,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(184,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(184,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(184,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(190,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(190,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(190,12): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(28,11): error C2082: redefinition of formal parameter 'type'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(49,24): error C2039: 'body': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_routine_decl>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(105,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_routine_decl>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(54,18): error C2039: 'rhs': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_assign>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(112,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_assign>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(58,14): error C2039: 'predicate': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_if>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(117,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_if>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(59,14): error C2039: 'conseq': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_if>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(117,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_if>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(60,14): error C2039: 'altern': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_if>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(117,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_if>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(64,17): error C2039: 'predicate': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_while>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(123,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_while>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(65,17): error C2039: 'body': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_while>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(123,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_while>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(70,15): error C2039: 'lower_bound': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_for>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(128,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_for>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(71,15): error C2039: 'upper_bound': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_for>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(128,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_for>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(72,15): error C2039: 'body': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_for>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(128,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_for>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(94,18): error C2039: 'expr': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_return>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(153,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_return>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(138,16): error C2039: 'arg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_itof>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(189,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_itof>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(170,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(170,11): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(170,11): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(171,41): error C2039: 'rarg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(171,6): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(171,6): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(173,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(173,11): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(173,11): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(174,41): error C2039: 'rarg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(174,6): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(174,6): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(176,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(176,11): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(176,11): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(177,41): error C2039: 'rarg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(177,6): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(177,6): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(179,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(179,11): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(179,11): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(180,41): error C2039: 'rarg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(180,6): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(180,6): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(182,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(182,11): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(182,11): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(183,42): error C2039: 'rarg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(183,7): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(183,7): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(185,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(185,11): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(185,11): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(186,42): error C2039: 'rarg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(186,7): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(186,7): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(188,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(188,11): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(188,11): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(189,41): error C2039: 'rarg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(189,6): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(189,6): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(191,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(191,11): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(191,11): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(192,42): error C2039: 'rarg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(192,7): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(192,7): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(194,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(194,11): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(194,11): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(195,41): error C2039: 'rarg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(195,6): error C2660: 'eval_ast_expr': function does not take 1 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(150,5): message : see declaration of 'eval_ast_expr'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(195,6): message : while trying to match the argument list '(FileDescriptor *)'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(197,46): error C2039: 'larg': is not a member of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(182,10): message : see declaration of 'ast_node::<unnamed-type-f>::<unnamed-type-a_binary_op>'
+C:\Desktop\BM_Code\Compiler_2023\Ast.cpp(197,50): fatal  error C1003: error count exceeds 100; stopping compilation
   Compiler_2023.cpp
   FileDescriptor.cpp
   Parser.cpp
-C:\Desktop\BM_Code\Compiler_2023\STable.h(31,13): error C2086: 'STable *STable::next': redefinition
 C:\Desktop\BM_Code\Compiler_2023\FileDescriptor.cpp(7,22): error C2011: 'FileDescriptor': 'class' type redefinition
 C:\Desktop\BM_Code\Compiler_2023\FileDescriptor.cpp(7,7): message : see declaration of 'FileDescriptor'
 C:\Desktop\BM_Code\Compiler_2023\Ast.h(14,5): error C2143: syntax error: missing ';' before '*'
@@ -15,138 +217,175 @@ C:\Desktop\BM_Code\Compiler_2023\Ast.h(15,16): error C2238: unexpected token(s) 
 C:\Desktop\BM_Code\Compiler_2023\Ast.h(22,10): error C2143: syntax error: missing ';' before '*'
 C:\Desktop\BM_Code\Compiler_2023\Ast.h(22,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 C:\Desktop\BM_Code\Compiler_2023\Ast.h(22,16): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(88,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(88,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(88,13): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(93,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(93,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(93,12): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(97,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(97,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(97,18): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(98,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(98,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(98,15): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(99,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(99,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(99,15): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(103,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(103,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(103,18): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(104,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(104,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(104,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(69,2): error C2365: 'ast_times': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(45,2): message : see declaration of 'ast_times'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(70,2): error C2365: 'ast_divide': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(46,2): message : see declaration of 'ast_divide'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(71,2): error C2365: 'ast_plus': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(47,2): message : see declaration of 'ast_plus'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(72,2): error C2365: 'ast_minus': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(48,2): message : see declaration of 'ast_minus'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(73,2): error C2365: 'ast_eq': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(49,2): message : see declaration of 'ast_eq'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(74,2): error C2365: 'ast_neq': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(50,2): message : see declaration of 'ast_neq'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(76,2): error C2365: 'ast_lt': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(52,2): message : see declaration of 'ast_lt'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(77,2): error C2365: 'ast_le': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(53,2): message : see declaration of 'ast_le'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(78,2): error C2365: 'ast_gt': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(54,2): message : see declaration of 'ast_gt'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(79,2): error C2365: 'ast_ge': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(55,2): message : see declaration of 'ast_ge'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(80,2): error C2365: 'ast_and': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(56,2): message : see declaration of 'ast_and'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(81,2): error C2365: 'ast_or': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(57,2): message : see declaration of 'ast_or'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(82,2): error C2365: 'ast_cand': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(58,2): message : see declaration of 'ast_cand'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(83,2): error C2365: 'ast_cor': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(59,2): message : see declaration of 'ast_cor'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(84,2): error C2365: 'ast_not': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(60,2): message : see declaration of 'ast_not'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(85,2): error C2365: 'ast_uminus': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(61,2): message : see declaration of 'ast_uminus'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(86,2): error C2365: 'ast_uplus': redefinition; previous definition was 'enumerator'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(62,2): message : see declaration of 'ast_uplus'
 C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,7): error C2143: syntax error: missing ';' before '*'
 C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,20): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(110,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(110,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(110,20): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(111,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(111,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(111,13): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(133,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(133,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(133,13): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(157,80): warning C4138: '*/' found outside of comment
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(157,80): error C2059: syntax error: '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(158,18): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(162,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(162,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(162,13): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(163,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(163,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(163,13): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(169,7): error C2143: syntax error: missing ';' before '*'
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(169,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Desktop\BM_Code\Compiler_2023\Ast.h(169,12): error C2238: unexpected token(s) preceding ';'
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(19,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(20,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(21,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(22,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(23,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(109,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(114,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(114,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(114,12): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(118,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(118,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(118,18): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(119,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(119,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(119,15): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(120,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(120,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(120,15): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(124,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(124,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(124,18): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(125,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(125,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(125,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(130,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(130,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(130,20): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(131,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(131,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(131,20): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(132,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(132,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(132,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(154,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(154,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(154,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(183,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(183,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(183,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(184,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(184,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(184,13): error C2238: unexpected token(s) preceding ';'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(190,7): error C2143: syntax error: missing ';' before '*'
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(190,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(190,12): error C2238: unexpected token(s) preceding ';'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(25,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(26,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(27,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(28,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(29,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(30,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(31,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(32,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(33,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(34,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(35,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(36,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(37,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(38,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(39,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(40,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(41,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(42,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(43,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(44,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(45,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(46,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(47,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(48,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(49,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(50,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(51,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(52,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.h(53,7): error C2535: 'AST *Parser::Parse(AST *)': member function already defined or declared
-C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::Parse'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(24,7): message : see declaration of 'Parser::Parse'
 C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(3,9): error C2600: 'Parser::Parser': cannot define a compiler-generated special member function (must be declared in the class first)
-C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(68,1): error C2761: 'AST *Parser::ParseProgram(AST *)': redeclaration of member is not allowed
-C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(71,1): fatal  error C1004: unexpected end-of-file found
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(143,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(143,1): error C2556: 'int Parser::ParseProgram(AST *)': overloaded function differs only by return type from 'AST *Parser::ParseProgram(AST *)'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(17,7): message : see declaration of 'Parser::ParseProgram'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(142,9): error C2040: 'Parser::ParseProgram': 'int (AST *)' differs in levels of indirection from 'AST *(AST *)'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(156,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(156,1): error C2556: 'int Parser::ParseDecl_list(AST *)': overloaded function differs only by return type from 'AST *Parser::ParseDecl_list(AST *)'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(18,7): message : see declaration of 'Parser::ParseDecl_list'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(155,9): error C2040: 'Parser::ParseDecl_list': 'int (AST *)' differs in levels of indirection from 'AST *(AST *)'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(157,14): error C2082: redefinition of formal parameter 'tree'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(157,24): error C2275: 'AST': expected an expression instead of a type
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(161,19): error C2027: use of undefined type 'FileDescriptor'
+C:\Desktop\BM_Code\Compiler_2023\FileDescriptor.cpp(7,7): message : see declaration of 'FileDescriptor'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(163,24): error C2275: 'AST': expected an expression instead of a type
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(163,9): error C2065: 'ParseDecl_list': undeclared identifier
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(174,14): error C2511: 'AST *Parser::ParseDecl(void)': overloaded member function not found in 'Parser'
+C:\Desktop\BM_Code\Compiler_2023\Parser.h(11,7): message : see declaration of 'Parser'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(178,15): error C2671: 'Parser::ParseDecl': static member functions do not have 'this' pointers
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(181,16): error C2671: 'Parser::ParseDecl': static member functions do not have 'this' pointers
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(186,4): error C2671: 'Parser::ParseDecl': static member functions do not have 'this' pointers
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(188,16): error C2671: 'Parser::ParseDecl': static member functions do not have 'this' pointers
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(191,4): error C2671: 'Parser::ParseDecl': static member functions do not have 'this' pointers
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(194,16): error C2671: 'Parser::ParseDecl': static member functions do not have 'this' pointers
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(200,3): error C2671: 'Parser::ParseDecl': static member functions do not have 'this' pointers
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(202,10): error C2660: 'make_ast_node': function does not take 2 arguments
+C:\Desktop\BM_Code\Compiler_2023\Ast.h(200,6): message : see declaration of 'make_ast_node'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(202,10): message : while trying to match the argument list '(AST_type, STEntry *)'
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(206,16): error C2671: 'Parser::ParseDecl': static member functions do not have 'this' pointers
+C:\Desktop\BM_Code\Compiler_2023\Parser.cpp(206,16): fatal  error C1003: error count exceeds 100; stopping compilation
   Scanner.cpp
   STable.cpp
-C:\Desktop\BM_Code\Compiler_2023\stentry.h(42,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Desktop\BM_Code\Compiler_2023\STable.h(31,13): error C2086: 'STable *STable::next': redefinition
+C:\Desktop\BM_Code\Compiler_2023\stentry.h(47,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   STEntry.cpp
 C:\Desktop\BM_Code\Compiler_2023\STEntry.cpp(41,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   STList.cpp
-C:\Desktop\BM_Code\Compiler_2023\stentry.h(42,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Desktop\BM_Code\Compiler_2023\stentry.h(47,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Symbol_Tables.cpp
-C:\Desktop\BM_Code\Compiler_2023\STable.h(31,13): error C2086: 'STable *STable::next': redefinition
-C:\Desktop\BM_Code\Compiler_2023\Symbol_Tables.cpp(13,9): error C2248: 'STable::next': cannot access private member declared in class 'STable'
-C:\Desktop\BM_Code\Compiler_2023\STable.h(21,13): message : see declaration of 'STable::next'
-C:\Desktop\BM_Code\Compiler_2023\STable.h(11,7): message : see declaration of 'STable'
-C:\Desktop\BM_Code\Compiler_2023\Symbol_Tables.cpp(18,28): error C2248: 'STable::next': cannot access private member declared in class 'STable'
-C:\Desktop\BM_Code\Compiler_2023\STable.h(21,13): message : see declaration of 'STable::next'
-C:\Desktop\BM_Code\Compiler_2023\STable.h(11,7): message : see declaration of 'STable'
   Generating Code...

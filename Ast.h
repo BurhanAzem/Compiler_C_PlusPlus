@@ -40,7 +40,9 @@ typedef enum
 	ast_return,			 /* Return statement */
 	ast_var,			 /* Variable reference */
 	ast_integer,		 /* Integer literal */
-	ast_string,			 /* String literal */
+	ast_string,	
+	ast_double, 
+	ast_char,/* String literal */
 	ast_boolean,		 /* Boolean literal */
 	ast_times,			 /*  operator */
 	ast_divide,			/* / operator */
@@ -59,11 +61,34 @@ typedef enum
 	ast_cor, /* cor operator */
 	ast_not, /* not operator */
 	ast_uminus, /* unary -operator */
+	ast_uplus,
 	ast_eof, /* End of File */
 	ast_float, /* float */
-	ast_itof, /* convert integr to float */
+	ast_itof,
+	ast_none/* convert integr to float */
 }AST_type;
 
+typedef enum{
+	ast_times,			 /*  operator */
+	ast_divide,			/* / operator */
+	ast_plus,			 /* + operator */
+	ast_minus,			 /* -operator */
+	ast_eq,				/* = operator */
+	ast_neq,			/* != operator */
+
+	ast_lt, /* < operator */
+	ast_le, /* <= operator */
+	ast_gt, /* > operator */
+	ast_ge, /* >= operator */
+	ast_and, /* and operator */
+	ast_or, /* or operator */
+	ast_cand, /* cand operator */
+	ast_cor, /* cor operator */
+	ast_not, /* not operator */
+	ast_uminus, /* unary -operator */
+	ast_uplus,
+
+}j_type;
 ///////////////////////////////////////////////////////////////////////
 /* The actual datatype for an abstract syntax tree (AST) node. */
 typedef struct ast_node
@@ -73,7 +98,6 @@ typedef struct ast_node
 	{
 		struct {
 			symbol_table_entry* name; /* Variable's symbol table entry */
-			AST_type type; /* Declared type of variable */
 		} a_var_decl;
 
 		struct {
@@ -154,15 +178,15 @@ typedef struct ast_node
 		}a_boolean;
 
 		struct {
-				symbol_table_entry* arg; /* Argument, struct ast_node *arg; /* Argument */ */
-				ast_type type;         //  	j_type type;
+				symbol_table_entry* arg; /* Argument, struct ast_node *arg; /* Argument */ 
+			  	j_type type;
 		} a_unary_op;
 
 		struct {
 			AST* larg; /* Argument 1 */
 			AST* rarg; /* Argument 2 */
 			AST_type type;
-			//j_type rel_type;
+			j_type rel_type;
 		} a_binary_op;
 
 		struct {
@@ -178,6 +202,7 @@ ste_list* cons_ste(symbol_table_entry*, ste_list*);
 int eval_ast_expr(FileDescriptor*, AST*);
 AST* make_ast_node();
 void print_ast_node(FILE*, AST*);
+
 #endif
 
 
