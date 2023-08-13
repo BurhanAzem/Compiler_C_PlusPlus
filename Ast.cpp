@@ -19,19 +19,21 @@ void fatal_error(const char* message) {
 	printf("Fatal Error: %s\n", message);
 	exit(1);
 }
+
+
+
 ///////////////////////////////////////////////////////////////////////
 // page 2
 AST* make_ast_node(AST_type type, ...)
 {
-	AST* n = (AST*)malloc(sizeof(AST)); // change to new
+	AST* n = new AST; // Use new for C++
 	va_list ap;
-	AST_type type;
 
 	if (n == NULL) fatal_error("malloc failed in make_ast_node\n");
 
-	va_start(ap);
-	type = va_arg(ap, AST_type);
+	va_start(ap, type);
 	n->type = type;
+
 	switch (type) {
 		case ast_var_decl:
 			n->f.a_var_decl.name = va_arg(ap, symbol_table_entry*);
@@ -73,7 +75,7 @@ AST* make_ast_node(AST_type type, ...)
 			break;
 
 		case ast_read: //page 3
-			n->f.a_read.var = va_arg(ap, symbol_table_entry*);
+			n->f.a_read.var = va_arg(ap, STEntry*);
 			break;
 
 		case ast_write:
@@ -124,16 +126,16 @@ AST* make_ast_node(AST_type type, ...)
 		case ast_and:
 		case ast_or:
 		case ast_cand:
-		/*case ast_cor:
+		case ast_cor:
 			n->f.a_binary_op.larg = va_arg(ap, AST*);
 			n->f.a_binary_op.rarg = va_arg(ap, AST*);
-			break;*/
+			break;
 
-		//case ast_not:
-		/*case ast_uminus:
-			n->f.a_unary_op.arg = va_arg(ap, AST*);
-			break;*/
-			// new page page 4
+		case ast_not:
+		case ast_uminus:
+			n->f.a_unary_op.arg = va_arg(ap, symbol_table_entry*);  /// ?????????????????????????????????????????????????????????????????????????????????????????????????
+			break;
+			 //new page page 4
 		case ast_itof:
 			n->f.a_itof.arg = va_arg(ap, AST*);
 			break;

@@ -68,32 +68,13 @@ typedef enum
 	ast_none/* convert integr to float */
 }AST_type;
 
-typedef enum{
-	ast_times,			 /*  operator */
-	ast_divide,			/* / operator */
-	ast_plus,			 /* + operator */
-	ast_minus,			 /* -operator */
-	ast_eq,				/* = operator */
-	ast_neq,			/* != operator */
 
-	ast_lt, /* < operator */
-	ast_le, /* <= operator */
-	ast_gt, /* > operator */
-	ast_ge, /* >= operator */
-	ast_and, /* and operator */
-	ast_or, /* or operator */
-	ast_cand, /* cand operator */
-	ast_cor, /* cor operator */
-	ast_not, /* not operator */
-	ast_uminus, /* unary -operator */
-	ast_uplus,
-
-}j_type;
 ///////////////////////////////////////////////////////////////////////
 /* The actual datatype for an abstract syntax tree (AST) node. */
 typedef struct ast_node
 {
 	AST_type      type; /* Type of the AST node */
+	AST* next;
 	union /* The fields depend on a node's type */
 	{
 		struct {
@@ -200,7 +181,7 @@ typedef struct ast_node
 ast_list* cons_ast(AST*, ast_list*);
 ste_list* cons_ste(symbol_table_entry*, ste_list*);
 int eval_ast_expr(FileDescriptor*, AST*);
-AST* make_ast_node();
+AST* make_ast_node(AST_type type, ...);
 void print_ast_node(FILE*, AST*);
 
 #endif
