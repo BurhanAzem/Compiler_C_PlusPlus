@@ -142,11 +142,11 @@ AST_type getAstType(char* type)
 		| id <arg_lst>
 		| integer_costant
 		| string_constant                                       
-		|< expr> <arith_op> <expr>
+		| <expr> <arith_op> <expr>
 		| true
 		| false
 		| <expr> <rel_op> <expr>
-		|<expr> <rel_conj> <expr>
+		| <expr> <rel_conj> <expr>
 		| <unary_op> (<expr>
 		| '(' <expr> ')'
 
@@ -277,6 +277,8 @@ AST* Parser::ParseDecl()
 	}
 	else if (next_token->type == kw_function)
 	{
+		this->symbol_Tables->enter_scope();  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Enter new scop
+
 		next_token = this->scanner.Scan();
 		char* name = next_token->str_ptr;
 		if (next_token->type != lx_identifier)
@@ -303,6 +305,10 @@ AST* Parser::ParseDecl()
 	}
 	else if (next_token->type == kw_procedure)
 	{
+		this->symbol_Tables->enter_scope();  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Enter new scop
+		                                     // Bassam note you should enter scop if you arraive on these keyword { function, procedure , for } else you should enter scop just on begin keyword
+											 // and exit scop just on end keyword 
+
 		next_token = this->scanner.Scan();
 		char* name = next_token->str_ptr;
 		if (next_token->type != lx_identifier)
@@ -469,6 +475,11 @@ AST* Parser::ParseBlock()
 	{
 		this->scanner.Fd->reportError("Invalid grammer");
 	}
+
+
+	this->symbol_Tables->exit_scope(); // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+											// Bassam note you should enter scop if you arraive on these keyword { function, procedure , for } else you should enter scop just on begin keyword
+											// and exit scop just on end keyword
 
 	symbol_table_entry* sTEntry = new symbol_table_entry(name, STE_STRING);
 
